@@ -1,5 +1,5 @@
 const os = require('os') //importando "os". o node trabalha com Common JS(require e exports) para importar módulos. Aqui estamos importando o módulo do Node.
-const log = require('./logger') //importando o arquivo logger, módulo criado por mim
+const log = require('./logger') //importando o arquivo logger, módulo criado por mim no  arquivo logger.js
 
 
 setInterval(() => { //função global, executar todo o script a cada 1000ms (definido no final)
@@ -26,7 +26,7 @@ console.clear()
 console.log("=== PC STATS ===")
 console.table(stats)
 
-console.log("Rodando")
+log("Rodando")
 
 }, 1000)
 
