@@ -1,9 +1,13 @@
 const EventEmitter = require('events')
+const fs = require('fs') //módulo fs = módulo que trabalha com os arquivos do sistema (system files)
+const path = require('path') //vai pegar o arquivo no local exato que eu falar
 
 const emitter = new EventEmitter()
 
 emitter.on('log', (message) => { //se emitir "log", vai exibir a mensagem
-    console.log(message)
+    fs.appendFile(path.join(__dirname, 'log.txt' ), message, (err) =>  {
+        if (err) throw err
+    })
 })
     //emitter.emit('log', "mensagem que eu quero")
 
@@ -13,4 +17,4 @@ function log(message) {
 
 //log("Emitindo mensagem de exemplo")
 
-module.exports = log //exportando a funçao log do modulo logger
+module.exports = log //exportando a funçao log do modulo logger'
