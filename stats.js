@@ -26,7 +26,7 @@ console.clear()
 console.log("=== PC STATS ===")
 console.table(stats)
 
-log("Rodando")
+log(`${JSON.stringify(stats)}\n`) //transforma o objeto js em um obj texto (JSON).
 
 }, 1000)
 
